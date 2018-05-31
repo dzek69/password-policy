@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>password-policy demo</title>
+</head>
+<body>
+<noscript>This demo requires JavaScript support.</noscript>
+<script>var module = {};</script>
+<script src="index.js"></script>
+<div style="display: none;">
+    Put a password here (warning: it's not masked)
+    <br />
+    <input />
+    <pre></pre>
+</div>
+<script>
+    const $ = s => document.querySelector(s);
+
+    $("div").removeAttribute("style");
+    const input = $("input");
+    const pre = $("pre");
+
+    input.addEventListener("keyup", () => {
+        const result = validate(input.value);
+        pre.textContent = JSON.stringify(result, null, 4);
+    });
+</script>
+</body>
+</html>

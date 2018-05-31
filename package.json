@@ -1,0 +1,28 @@
+{
+  "name": "@dzek69/password-policy",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/dzek69/password-policy.git",
+  "author": "Jacek Nowacki @dzek69 <git-public@dzek.eu>",
+  "license": "MIT",
+  "scripts": {
+    "test": "NODE_ENV=testing mocha 'src/**/*.spec.js'",
+    "docs": "node build-scripts/docs && jsdoc src/* README.md -t node_modules/docdash -d ./docs -u ./tutorials",
+    "demo": "node build-scripts/demo",
+    "transpile": "node build-scripts/transpile && babel src -d dist --ignore spec.js",
+    "prepublishOnly": "npm run docs && npm run demo && npm run transpile"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-rewire": "^1.1.0",
+    "babel-preset-env": "^1.6.1",
+    "docdash": "^0.4.0",
+    "fs-extra": "^6.0.1",
+    "jsdoc": "^3.5.5",
+    "lodash": "^4.17.4",
+    "mkdirp-promise": "^5.0.1",
+    "mocha": "^4.0.1",
+    "must": "^0.13.4",
+    "rmdir": "^1.2.0"
+  }
+}
