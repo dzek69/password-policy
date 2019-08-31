@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Creates new validator with some rules overriden. Use `tweaked.js` export to more friendly configuration (object with
  * defaults, instead of long list of required arguments)
@@ -52,7 +54,7 @@ const createValidator = (
     };
 
     const format = (points) => {
-        const percentage = Math.min(points * (100 / fullPoints), 100);
+        const percentage = Math.min(points * (100 / fullPoints), 100); // eslint-disable-line no-magic-numbers
         const valid = percentage >= requiredPercentage;
         return {
             points,
@@ -80,7 +82,7 @@ const createValidator = (
 /**
  * @type {Validator}
  */
-const validate = createValidator(18, 75, 1, 0.5, 1.5, 3, 7, 5, 5);
+const validate = createValidator(18, 75, 1, 0.5, 1.5, 3, 7, 5, 5); // eslint-disable-line no-magic-numbers
 validate.createValidator = createValidator;
 
 module.exports = validate;

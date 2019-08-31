@@ -1,6 +1,8 @@
+"use strict";
+
 const { createValidator } = require("./index");
 
-const defaults = [18, 75, 1, 0.5, 1.5, 3, 7, 5, 5];
+const defaults = [18, 75, 1, 0.5, 1.5, 3, 7, 5, 5]; // eslint-disable-line no-magic-numbers
 const props = [
     "fullPoints", "requiredPercentage", "pointsPerChar", "pointsPerUnique", "repeatedCharPenalty", "repeatedCharCount",
     "repeatedCharMaxPosition", "minUniqueChars", "maxNonUniqueScore",
@@ -49,6 +51,6 @@ const unpackOptions = options => {
  */
 
 const createTweakedValidator = options => {
-    return createValidator(... unpackOptions(createOptions(options)));
+    return createValidator(...unpackOptions(createOptions(options)));
 };
 module.exports = createTweakedValidator;

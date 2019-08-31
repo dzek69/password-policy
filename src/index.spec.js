@@ -1,7 +1,9 @@
+"use strict";
+
 const validator = require("./index");
 
 const log = (value) => {
-    console.log(value, validator(value))
+    console.info(value, validator(value));
 };
 
 log("Hi");
