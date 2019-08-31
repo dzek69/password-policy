@@ -21,7 +21,7 @@ you can do it)
     - prevent reusing same characters,
     - be BS-free and requiring just unique characters, not different character ranges (lower/upper case letters,
     numbers, some "special chars" and that kind of typical BS) 
-- es6+ first approach, with es5 transpiled version to be found inside `dist` folder *
+- es6+ first approach, >3% browsers usage transpiled version to be found inside `dist` folder *
 
 \* - transpiling kills JS engines optimizations, makes codes longer and tree shaking harder to do and/or slower
 
